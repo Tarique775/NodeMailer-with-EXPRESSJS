@@ -19,16 +19,16 @@ app.get('/', (req, res) => {
 });
 
 app.post('/send', async (req, res, next) => {
-    const { name, company, email, phone, message 
-} = req.body;
+    const {
+ name, company, email, phone, message, } = req.body;
     const outPut = `
         <p>You have a new contact Details</p>
         <h3>Contact Details</h3>
         <ul>
-            <li>Name:${name}</li>
-            <li>Name:${company}</li>
-            <li>Name:${email}</li>
-            <li>Name:${phone}</li>
+            <li>Name: ${name}</li>
+            <li>Company: ${company}</li>
+            <li>Email Address: ${email}</li>
+            <li>Phone Number: ${phone}</li>
         </ul>
         <h3>Message</h3>
         <p>${message}</p>
