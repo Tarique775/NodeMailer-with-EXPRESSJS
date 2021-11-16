@@ -19,8 +19,8 @@ app.get('/', (req, res) => {
 });
 
 app.post('/send', async (req, res, next) => {
-    const {
- name, company, email, phone, message, } = req.body;
+    const { name, company, email, phone, message 
+} = req.body;
     const outPut = `
         <p>You have a new contact Details</p>
         <h3>Contact Details</h3>
@@ -60,7 +60,7 @@ app.post('/send', async (req, res, next) => {
 
         // send mail with defined transport object
         const info = await transporter.sendMail({
-            from: '"Fred Foo 👻" <electron4329@gmail.com>', // sender address
+            from: `"Fred Foo 👻" ${process.env.EMAIL}`, // sender address
             to: `${email}`, // list of receivers
             subject: 'Hello ✔', // Subject line
             text: 'Hello world?', // plain text body
